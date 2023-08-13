@@ -6,12 +6,9 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class AnimalsCage {
-
-
     private Animal animal1;
     private Animal animal2;
-
-    Timer timer = new Timer();
+    private Timer timer = new Timer();
 
     @Autowired
     public void Animal(@Qualifier("cat") Animal animal1, @Qualifier("dog") Animal animal2, Timer timer) {
@@ -22,17 +19,11 @@ public class AnimalsCage {
 
     public void whatAnimalSay() {
         System.out.println("Say:");
-        System.out.println(animal1.toString());
-        System.out.println("At:");
-        System.out.println(timer.getTime());
-        System.out.println("________________________");
-        System.out.println("Say:");
-        System.out.println(animal2.toString());
+        System.out.println(animal1.toString() + ", " + animal2.toString());
         System.out.println("At:");
         System.out.println(timer.getTime());
         System.out.println("________________________");
     }
-
 
     public Timer getTimer() {
         return timer;
